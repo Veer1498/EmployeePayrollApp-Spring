@@ -11,7 +11,7 @@ public class EmployeePayrollDTO {
 
     @Override
     public String toString() {
-        return "name = "+name +" salary = " + salary;
+        return "name = " + name + " salary = " + salary;
     }
 
 }

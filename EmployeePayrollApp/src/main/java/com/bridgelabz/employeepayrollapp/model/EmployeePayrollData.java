@@ -7,10 +7,10 @@ public class EmployeePayrollData {
     private String name;
     private long salary;
 
-    public EmployeePayrollData() {}
+    public EmployeePayrollData() {
+    }
 
-    public EmployeePayrollData(int empId, EmployeePayrollDTO employeePayrollDTO)
-    {
+    public EmployeePayrollData(int empId, EmployeePayrollDTO employeePayrollDTO) {
         this.employeeId = empId;
         this.name = employeePayrollDTO.name;
         this.salary = employeePayrollDTO.salary;
