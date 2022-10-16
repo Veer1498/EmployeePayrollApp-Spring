@@ -5,6 +5,7 @@ import com.bridgelabz.employeepayrollapp.model.EmployeePayrollData;
 
 import java.util.List;
 
+
 public interface IEmployeePayrollService {
     List<EmployeePayrollData> getEmployeePayrollData();
 
@@ -12,7 +13,7 @@ public interface IEmployeePayrollService {
 
     EmployeePayrollData createEmployeePayrollData(EmployeePayrollDTO empPayrollDTO);
 
-    EmployeePayrollData updateEmployeePayrollData(EmployeePayrollDTO empPayrollDTO);
+    EmployeePayrollData updateEmployeePayrollData(int empId,EmployeePayrollDTO empPayrollDTO);
 
     void deleteEmployeePayrollData(int empId);
 }
