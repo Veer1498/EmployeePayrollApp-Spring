@@ -15,5 +15,4 @@ public class EmployeePayrollAppApplication {
         log.info("Employee Payroll App has Started in {} Environment",context.getEnvironment().getProperty("environment"));
         log.info("Database : User Name is {}",context.getEnvironment().getProperty("spring.datasource.username"));
     }
-
 }
