@@ -13,7 +13,7 @@ import java.util.List;
 
 
 /**
- * Puprose : To Create Employee Payroll App and Perform Operations.
+ * Puprose : To Create Employee Payroll App and Perform Operations like CRUD.
  * Author : Veer.Singa
  */
 @RestController
@@ -32,7 +32,7 @@ public class EmployeePayrollController {
      * @return -ResponseDTO
      */
 
-    @RequestMapping(value = {"", "/", "/get"})
+    @GetMapping(value = {"", "/", "/getAll"})
     public ResponseEntity<ResponseDTO> getEmployeePayrollData() {
         List<EmployeePayrollData> empDataList = null;
         empDataList = employeePayrollService.getEmployeePayrollData();
@@ -53,6 +53,11 @@ public class EmployeePayrollController {
         return new ResponseEntity<ResponseDTO>(respDTO, HttpStatus.OK);
     }
 
+    /**
+     *
+     * @param empPayrollDTO
+     * @return
+     */
     @PostMapping("/create")
     public ResponseEntity<ResponseDTO> createEmployeePayrollData(@RequestBody EmployeePayrollDTO empPayrollDTO) {
         EmployeePayrollData empData = null;
@@ -61,6 +66,12 @@ public class EmployeePayrollController {
         return new ResponseEntity<ResponseDTO>(respDTO, HttpStatus.OK);
     }
 
+    /**
+     *
+     * @param empId
+     * @param empPayrollDTO
+     * @return
+     */
     @PutMapping(path = "/update/{empId}")
     public ResponseEntity<ResponseDTO> updateEmployeePayrollData(@PathVariable("empId") int empId,
                                                                  @RequestBody EmployeePayrollDTO empPayrollDTO) {
@@ -71,6 +82,11 @@ public class EmployeePayrollController {
         return new ResponseEntity<ResponseDTO>(respDTO, HttpStatus.OK);
     }
 
+    /**
+     *
+     * @param empId
+     * @return
+     */
     @DeleteMapping("/delete/{empId}")
     public ResponseEntity<ResponseDTO> deleteEmployeePayrollData(@PathVariable("empId") int empId) {
         employeePayrollService.deleteEmployeePayrollData(empId);
