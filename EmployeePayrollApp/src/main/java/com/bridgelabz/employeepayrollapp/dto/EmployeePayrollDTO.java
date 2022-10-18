@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
 import javax.validation.constraints.*;
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 @Data
@@ -22,7 +22,7 @@ public class EmployeePayrollDTO {
     @JsonFormat(pattern = "dd MM yyyy")
     @NotNull(message = "startDate Should not be Empty")
     @PastOrPresent(message = "startDate Should not be past or present Date")
-    private Date startDate;
+    private LocalDate startDate;
 
     @NotBlank(message = "Note cannot be empty")
     private String note;
@@ -32,6 +32,5 @@ public class EmployeePayrollDTO {
 
     @NotNull(message = "department should not be Empty")
     private List<String> department;
-
 
 }
