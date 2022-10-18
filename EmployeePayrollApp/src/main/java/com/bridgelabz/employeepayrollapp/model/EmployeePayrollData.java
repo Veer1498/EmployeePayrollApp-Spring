@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 @Data
@@ -33,8 +34,11 @@ public class EmployeePayrollData {
     @Column(name = "department")
     private List<String> department;
 
-    public EmployeePayrollData(int empId, EmployeePayrollDTO employeePayrollDTO) {
-        this.employeeId = empId;
+    public EmployeePayrollData( EmployeePayrollDTO employeePayrollDTO) {
+        this.updateEmployeeEmployeePayrollData(employeePayrollDTO);
+    }
+
+    public void updateEmployeeEmployeePayrollData(EmployeePayrollDTO employeePayrollDTO) {
         this.name = employeePayrollDTO.getName();
         this.salary = employeePayrollDTO.getSalary();
         this.gender = employeePayrollDTO.getGender();
