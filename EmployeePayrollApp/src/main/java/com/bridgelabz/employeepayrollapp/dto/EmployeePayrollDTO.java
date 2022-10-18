@@ -5,6 +5,8 @@ import lombok.Data;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
+import java.util.Date;
+import java.util.List;
 
 @Data
 public class EmployeePayrollDTO {
@@ -13,5 +15,16 @@ public class EmployeePayrollDTO {
     private String name;
     @Min(value = 500,message = "Minimum Wage should be 500 or More")
     private long salary;
+
+    private String gender;
+
+    private Date startDate;
+
+    private String note;
+
+    private String profilePic;
+
+    private List<String> department;
+
 
 }
