@@ -94,4 +94,19 @@ public class EmployeePayrollController {
         ResponseDTO respDTO = new ResponseDTO("Deleted Successfully", "Deleted id: " + empId);
         return new ResponseEntity<ResponseDTO>(respDTO, HttpStatus.OK);
     }
+
+    /**
+     * Method : To Get the Details of person by particualr Branch
+     * @param department
+     * @return ResponseEntity Object
+     */
+    
+    @GetMapping("/getByDept/{department}")
+    public ResponseEntity<ResponseDTO> getEmployeePayrollData(@PathVariable("department")String department){
+        List<EmployeePayrollData> employeePayrollDataList = null;
+        employeePayrollDataList = employeePayrollService.getEmployeePayrollDataByDepartment(department);
+        ResponseDTO responseDTO = new ResponseDTO("Get Call For ID Success",employeePayrollDataList);
+        return new ResponseEntity<ResponseDTO>(responseDTO,HttpStatus.OK);
+
+    }
 }
