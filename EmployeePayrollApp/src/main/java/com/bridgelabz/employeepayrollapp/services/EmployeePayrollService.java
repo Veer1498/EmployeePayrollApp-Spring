@@ -15,7 +15,6 @@ import java.util.List;
  */
 @Service
 public class EmployeePayrollService implements IEmployeePayrollService {
-    private List<EmployeePayrollData> employeePayrollList = new ArrayList<>();
     @Autowired
     EmployeePayrollRepository employeePayrollRepository;
 

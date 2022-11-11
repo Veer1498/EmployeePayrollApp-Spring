@@ -18,6 +18,7 @@ import java.util.List;
  * Author : Veer.Singa
  */
 @RestController
+@CrossOrigin
 @RequestMapping("/employeepayrollservice")
 public class EmployeePayrollController {
     /**
