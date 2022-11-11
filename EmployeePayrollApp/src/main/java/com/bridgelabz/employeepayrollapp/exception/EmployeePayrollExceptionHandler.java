@@ -13,7 +13,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 
-
 @ControllerAdvice
 public class EmployeePayrollExceptionHandler {
     /**
@@ -41,7 +40,7 @@ public class EmployeePayrollExceptionHandler {
     @ExceptionHandler(HttpMessageNotReadableException.class)
     public ResponseEntity<ResponseDTO> handleHttpMessageNotReadableException(HttpMessageNotReadableException exception){
 //        log.error("Invalid Date Format",exception);
-        ResponseDTO responseDTO = new ResponseDTO(message,"Should have date in the Format of dd MM yyyy");
+        ResponseDTO responseDTO = new ResponseDTO(message,"Should have date in the Format of dd MMM yyyy");
         return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.BAD_REQUEST);
     }
 
